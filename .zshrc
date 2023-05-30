@@ -138,4 +138,7 @@ source /usr/share/fzf/shell/key-bindings.zsh
 export FZF_DEFAULT_COMMAND="fd . $HOME --hidden"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME --hidden"
-
+export GOPATH="/home/vengolan/go"
+export GOBIN="/home/vengolan/go/bin"
+export PATH="/home/vengolan/go/bin:$PATH"
+source ~/.cargo/env
