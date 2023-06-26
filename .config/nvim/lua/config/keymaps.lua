@@ -11,3 +11,5 @@ vim.keymap.set("i", "<C-x>", function()
 end, { expr = true })
 
 vim.keymap.set("i", "jk", "<Esc>", {})
+
+vim.keymap.set({ "n", "i" }, "<M-g>", "<Cmd>GoAlt<CR>", {})
