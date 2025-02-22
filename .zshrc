@@ -79,7 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git golang docker docker-compose rust ripgrep rust fd fzf dotenv  dirhistory tmux zsh-autosuggestions zsh-syntax-highlighting )
+plugins=(git golang docker docker-compose rust fzf dotenv  dirhistory tmux zsh-autosuggestions zsh-syntax-highlighting )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,5 +133,8 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME --hidden"
 export GOPATH="/home/vengolan/go"
 export GOBIN="/home/vengolan/go/bin"
 export PATH="/home/vengolan/go/bin:$PATH"
+export PATH="/home/vengolan/go:$PATH"
 source ~/.cargo/env
+
+eval "$(zoxide init bash)"
 
