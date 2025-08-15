@@ -138,3 +138,6 @@ source ~/.cargo/env
 
 eval "$(zoxide init bash)"
 
+export PATH=~/.npm-global/bin:$PATH
+alias claude="/home/vengolan/.claude/local/claude"
+export EDITOR="nvim"

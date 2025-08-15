@@ -5,3 +5,5 @@
 	email = vengolan@gmail.com
 [core]
 	editor = nvim
+[credential]
+	helper = store
