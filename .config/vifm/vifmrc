@@ -564,4 +564,5 @@ nnoremap <c-u> <c-w>x
 " ------------------------------------------------------------------------------
 
 " https://github.com/cirala/vifm_devicons
-source ./favicons.vifm
+set relativenumber  
+source ~/.config/vifm/favicons.vifm
