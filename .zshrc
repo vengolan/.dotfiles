@@ -136,8 +136,10 @@ export PATH="/home/vengolan/go/bin:$PATH"
 export PATH="/home/vengolan/go:$PATH"
 source ~/.cargo/env
 
-eval "$(zoxide init bash)"
+eval "$(zoxide init zsh)"
 
 export PATH=~/.npm-global/bin:$PATH
 alias claude="/home/vengolan/.claude/local/claude"
 export EDITOR="nvim"
+
+export PATH=$PATH:$HOME/.config/vifm/scripts

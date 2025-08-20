@@ -25,6 +25,9 @@ elseif $EDITOR != ''
     let &vicmd = $EDITOR
 endif
 
+set vicmd=nvim
+set fastrun
+
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
 " solution, it's also much slower when processing large amounts of files and
@@ -465,7 +468,7 @@ if has('win')
     nnoremap yp :!echo %"d:gs!\!/! %i | clip<cr>
     " Yank path to current file to Windows clipboard with forward slashes
     nnoremap yf :!echo %"c:gs!\!/! %i | clip<cr>
-elseif $WAYLAND_DISPLAY
+elseif $WAYLAND_DISPLAY != ''
     if executable('wl-copy')
         " Yank current directory path into primary and selection clipboards
         nnoremap yd :!echo -n %d | wl-copy %i &&
@@ -503,7 +506,7 @@ nnoremap A cw
 " Open console in current directory
 if $DISPLAY && executable('xterm')
     nnoremap ,t :!xterm &<cr>
-elseif $TERMINAL
+elseif $TERMINAL != ''
     nnoremap ,t :!$TERMINAL &<cr>
 endif
 
@@ -566,3 +569,16 @@ nnoremap <c-u> <c-w>x
 " https://github.com/cirala/vifm_devicons
 set relativenumber  
 source ~/.config/vifm/favicons.vifm
+
+" Open PDF files with xdg-open
+filetype *.pdf xdg-open %f
+
+" Open image files with xdg-open
+filetype *.jpg,*.jpeg,*.png,*.gif,*.bmp,*.tiff,*.webp xdg-open %f
+
+" Open video files with xdg-open
+filetype *.mp4,*.mkv,*.webm,*.avi,*.mov,*.flv xdg-open %f
+
+
+command! zoxide :execute 'cd' fnameescape(system('zoxide query -l | fzf'))
+nnoremap Z :zoxide<CR>
