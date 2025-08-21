@@ -582,3 +582,5 @@ filetype *.mp4,*.mkv,*.webm,*.avi,*.mov,*.flv xdg-open %f
 
 command! zoxide :execute 'cd' fnameescape(system('zoxide query -l | fzf'))
 nnoremap Z :zoxide<CR>
+
+colorscheme crown_24bit
